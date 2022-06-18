@@ -1,30 +1,34 @@
-/home
-    show stats overview like streak and cards to study etc
-/study
-    where the studying happens
-    rep cards essentially, with a timer
-/add
-    add cards to deck
-    name, link, inital time, first date of completion, needed answer?, solution
-/stats
-    detailed stats breakdown
-/login
-    to login
-/signup
-    to signup
-/
-    intro home page?
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Getting Started
 
+First, run the development server:
 
-v1: only the srs bit\
-    19/6 0. set up next.js, tailwind, backend with docker postgres and node and any testing suitesaut
-    26/6 1. study page                with local backend and tests, with CI/CD pipeline, and migrate relevant data
-    3/7  2. addding page              with local backend and tests, with CI/CD pipeline, and migrate relevant data
-    10/7 3. home page                 with local backend and tests, with CI/CD pipeline, and migrate relevant data
-    17/7 4. stats page                with local backend and tests, with CI/CD pipeline, and migrate relevant data
-    24/7 5. user admin (login/signup) with local backend and tests, with CI/CD pipeline, and migrate relevant data
-    31/7 6. backend deployed to aws with lambda and whatever postgres service migrate all existing data to service
-    7/8  7. front end deployed to cdn or vercel and migrate all existing data to service
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-v2: code within the site
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
