@@ -18,7 +18,7 @@
 
 
 v1: only the srs bit\
-    19/6 0. set up next.js, tailwind, backend with docker postgres and node and any testing suitesaut
+    19/6 0. set up next.js, tailwind, backend with docker postgres and node and any testing suites, linting and prettier setup
     26/6 1. study page                with local backend and tests, with CI/CD pipeline, and migrate relevant data
     3/7  2. addding page              with local backend and tests, with CI/CD pipeline, and migrate relevant data
     10/7 3. home page                 with local backend and tests, with CI/CD pipeline, and migrate relevant data
