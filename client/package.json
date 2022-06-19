@@ -29,5 +29,17 @@
         "tabWidth": 4,
         "semi": true,
         "singleQuote": true
+    },
+    "eslintConfig": {
+        "extends": [
+            "next/babel",
+            "next/core-web-vitals"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "next/babel"
+        ],
+        "plugins": []
     }
 }
