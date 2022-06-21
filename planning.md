@@ -1,9 +1,9 @@
 /home
     show stats overview like streak and cards to study etc
-/study
+/deck/[deckName]/study
     where the studying happens
     rep cards essentially, with a timer
-/add
+/deck/[deckName]/add
     add cards to deck
     name, link, inital time, first date of completion, needed answer?, solution
 /stats
