@@ -2,7 +2,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE questions (
     question_uid UUID DEFAULT uuid_generate_v4 () NOT NULL PRIMARY KEY,
-    username VARCHAR(100) NOT NUll,
+    question_name VARCHAR(100) NOT NUll,
     deck_uid UUID REFERENCES decks(deck_uid) NOT NULL,
     question_position SMALLINT NOT NULL CHECK (question_position > 0),
     UNIQUE(question_uid)
@@ -38,3 +38,21 @@ CREATE TABLE settings {
     currect_multiplier NUMERIC(3, 2),
     incorrect_multiplier NUMERIC(3, 2)
 }
+
+DO $$
+
+DECLARE today_date DATE;
+DECLARE temp_user_uid UUID;
+DECLARE temp_deck_uid UUID;
+
+BEGIN
+
+    INSERT INTO users (user_name) VALUES ('test user') RETURNING user_uid INTO temp_user_uid;
+    INSERT INTO decks (deck_name) VALUES ('test deck') RETURNING deck_uid INTO temp_deck_uid;
+
+    today_date := NOW();
+
+
+
+
+END $$;

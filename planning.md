@@ -15,8 +15,6 @@
 /
     intro home page?
 
-
-
 v1: only the srs bit\
     26/6 1. study page                with local backend and tests, with CI/CD pipeline, and migrate relevant data
     3/7  2. addding page              with local backend and tests, with CI/CD pipeline, and migrate relevant data
@@ -27,3 +25,6 @@ v1: only the srs bit\
     7/8  7. front end deployed to cdn or vercel and migrate all existing data to service
 
 v2: code within the site
+
+
+https://github.com/xavier-kong/atomic/blob/master/server/dev-server/mock_data.sql for mock data sql
