@@ -4,6 +4,7 @@ CREATE TABLE questions (
     question_uid UUID DEFAULT uuid_generate_v4 () NOT NULL PRIMARY KEY,
     question_name VARCHAR(100) NOT NUll,
     deck_uid UUID REFERENCES decks(deck_uid) NOT NULL,
+    time_limit INTEGER CHECK (time_limit >= 0)
     question_position SMALLINT NOT NULL CHECK (question_position > 0),
     UNIQUE(question_uid)
 );
@@ -49,6 +50,7 @@ BEGIN
 
     INSERT INTO users (user_name) VALUES ('test user') RETURNING user_uid INTO temp_user_uid;
     INSERT INTO decks (deck_name) VALUES ('test deck') RETURNING deck_uid INTO temp_deck_uid;
+    
 
     today_date := NOW();
 
