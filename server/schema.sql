@@ -36,7 +36,7 @@ CREATE TABLE progress {
     user_uid UUID REFERENCES users(user_uid) NOT NULL,
     next_due DATE NOT NULL,
     first_attempt DATE NOT NULL,
-    interval_ms INTEGER NOT NULL CHECK (current_interval_ms >= 0),
+    interval_days INTEGER NOT NULL CHECK (interval_days >= 0),
     multiplier NUMERIC(3, 2) NOT NULL,
     time_used INTEGER CHECK (time_used >= 0)
 };
@@ -55,9 +55,12 @@ BEGIN
     INSERT INTO settings (deck_uid, user_uid, new_cards, current_multiplier, incorrect_multiplier) VALUES (temp_deck_uid, temp_user_uid, 3, 1.50, 0.75);
 
     INSERT INTO questions (question_name, deck_uid, time_limit, question_position) VALUES ('test 1', temp_deck_uid, 15, 1) RETURNING question_uid INTO temp_question_uid;
-    INSERT INTO progress (question_uid, deck_uid, user_uid, next_due, first_attempt, interval_ms, multiplier, time_used)
+    INSERT INTO progress (question_uid, deck_uid, user_uid, next_due, first_attempt, interval_ms, multiplier, time_used) VALUES (temp_question_uid, temp_deck_uid, temp_user_uid, today_date, today_date, 1, 1.50, 10);
 
+    INSERT INTO questions (question_name, deck_uid, time_limit, question_position) VALUES ('test 2', temp_deck_uid, 15, 1) RETURNING question_uid INTO temp_question_uid;
+    INSERT INTO progress (question_uid, deck_uid, user_uid, next_due, first_attempt, interval_ms, multiplier, time_used) VALUES (temp_question_uid, temp_deck_uid, temp_user_uid, today_date, today_date, 1, 1.50, 10);
 
-
+    INSERT INTO questions (question_name, deck_uid, time_limit, question_position) VALUES ('test 3', temp_deck_uid, 15, 1) RETURNING question_uid INTO temp_question_uid;
+    INSERT INTO progress (question_uid, deck_uid, user_uid, next_due, first_attempt, interval_ms, multiplier, time_used) VALUES (temp_question_uid, temp_deck_uid, temp_user_uid, today_date, today_date, 1, 1.50, 10);
 
 END $$;
