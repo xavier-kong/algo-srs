@@ -19,13 +19,13 @@ CREATE TABLE settings {
     new_cards SMALLINT NOT NULL CHECK (new_cards >= 0),
     current_multiplier NUMERIC(3, 2),
     incorrect_multiplier NUMERIC(3, 2)
-}
+};
 
 CREATE TABLE questions (
     question_uid UUID DEFAULT uuid_generate_v4 () NOT NULL PRIMARY KEY,
     question_name VARCHAR(100) NOT NUll,
     deck_uid UUID REFERENCES decks(deck_uid) NOT NULL,
-    time_limit INTEGER CHECK (time_limit >= 0)
+    time_limit INTEGER CHECK (time_limit >= 0),
     question_position SMALLINT NOT NULL CHECK (question_position > 0),
     UNIQUE(question_uid)
 );
